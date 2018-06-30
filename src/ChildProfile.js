@@ -1,4 +1,5 @@
 import React from 'react';
+import { Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default class ChildProfile extends React.Component {
   constructor() {
@@ -19,20 +20,20 @@ export default class ChildProfile extends React.Component {
 
   render() {
     return(
-      <form>
-        <label>
-          First Name:
-          <input type="text" value={this.state.firstName} onChange={(text) => this.handleChange(text, 'firstName')} />
-        </label>
-        <label>
-          Last Name:
-          <input type="text" value={this.state.lastName} onChange={(text) => this.handleChange(text, 'lastName')} />
-        </label>
-        <label>
-          City:
-          <input type="text" value={this.state.city} onChange={(text) => this.handleChange(text, 'city')} />
-        </label>
-      </form>
+      <Form>
+        <FormGroup>
+          <Label>First Name</Label>
+          <Input type="text" value={this.state.firstName} onChange={(text) => this.handleChange(text, 'firstName')} />
+        </FormGroup>
+        <FormGroup>
+          <Label>Last Name</Label>
+          <Input type="text" value={this.state.lastName} onChange={(text) => this.handleChange(text, 'lastName')} />
+        </FormGroup>
+        <FormGroup>
+          <Label>City</Label>
+          <Input type="text" value={this.state.city} onChange={(text) => this.handleChange(text, 'city')} />
+        </FormGroup>
+      </Form>
     )
   }
 }
