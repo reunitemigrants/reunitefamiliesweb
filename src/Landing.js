@@ -6,11 +6,32 @@ import {
     Navbar, Nav, NavItem, NavLink, NavbarBrand,
     Jumbotron
 } from 'reactstrap';
+import fire from './firebase/fire';
 
-export default class ChildProfile extends React.Component {
+export default class Landing extends React.Component {
   constructor() {
     super();
-    this.state = {};
+
+    this.state = {
+        email: '',
+        password: ''
+    }
+  }
+
+  handleChange(field, event) {
+    this.setState({
+      [field]: event.target.value
+    })
+  }
+
+  login(){
+    fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+        .catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
+        });
   }
 
   render() {
@@ -50,11 +71,16 @@ guardian of a child, a relative, or a parent.</p>
 
                             <Form>
                                 <FormGroup>
-                                    <Input type="email" placeholder="Email Address"/>
+                                    <Input type="email" placeholder="Email Address"
+                                        value={this.state.email}
+                                        onChange={(evnt)=>this.handleChange("email", evnt)}/>
                                 </FormGroup>
                                 <FormGroup>
-                                    <Input type="password" placeholder="Password"/>
+                                    <Input type="password" placeholder="Password"
+                                        value={this.state.password}
+                                        onChange={(evnt)=>this.handleChange("password", evnt)}/>
                                 </FormGroup>
+                                <Button color="primary">Login</Button>
                             </Form>
                         </div>
                     </Col>
