@@ -1,35 +1,44 @@
-import React from 'react';
+import * as React from 'react';
 import {
     Button,
     Container, Col, Row,
-    Form, FormGroup, Input, Label,
+    Form, FormGroup, Input,
     Navbar, Nav, NavItem, NavLink, NavbarBrand,
     Jumbotron
 } from 'reactstrap';
-import fire from './firebase/fire';
+import fire from 'data/fire';
 
-export default class Landing extends React.Component {
-  constructor() {
-    super();
+interface Props {
+
+}
+
+interface State {
+    email: string,
+    password: string,
+}
+
+export default class Landing extends React.PureComponent<Props, State> {
+  constructor(props: Props) {
+    super(props);
 
     this.state = {
         email: '',
-        password: ''
-    }
+        password: '',
+    };
   }
 
-  handleChange(field, event) {
+  handleChange = (field: keyof State, event) => {
     this.setState({
       [field]: event.target.value
-    })
-  }
+    } as Pick<State, typeof field>);
+  };
 
   login(){
     fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
         .catch(function(error) {
             // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
+            const errorCode = error.code;
+            const errorMessage = error.message;
             // ...
         });
   }
