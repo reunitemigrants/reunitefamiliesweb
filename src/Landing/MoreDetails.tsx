@@ -1,7 +1,7 @@
-import * as React from "react";
-import { Col, Jumbotron, Row } from "reactstrap";
-import Container from "reactstrap/lib/Container";
-import { LandingPageConstants } from "../data/translations";
+import * as React from 'react';
+import { Col, Jumbotron, Row } from 'reactstrap';
+import Container from 'reactstrap/lib/Container';
+import { LandingPageConstants } from '../data/translations';
 
 export class MoreDetails extends React.Component<{}> {
   public render() {
