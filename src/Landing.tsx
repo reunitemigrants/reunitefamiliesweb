@@ -15,7 +15,7 @@ interface Props {
 }
 
 interface State {
-    email: any,
+    email: string,
     password: string,
 }
 
