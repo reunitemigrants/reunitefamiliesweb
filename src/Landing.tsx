@@ -1,7 +1,9 @@
 import * as React from 'react';
 import {
     Button,
-    Container, Col, Row,
+    Container,
+    Col,
+    Row,
     Form, FormGroup, Input,
     Navbar, Nav, NavItem, NavLink, NavbarBrand,
     Jumbotron
@@ -37,8 +39,8 @@ export default class Landing extends React.PureComponent<Props, State> {
     fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
         .catch(function(error) {
             // Handle Errors here.
-            const errorCode = error.code;
-            const errorMessage = error.message;
+            // const errorCode = error.code;
+            // const errorMessage = error.message;
             // ...
         });
   }
@@ -63,8 +65,8 @@ export default class Landing extends React.PureComponent<Props, State> {
                     </NavItem>
                 </Nav>
             </Navbar>
-            <Jumbotron className="bg-secondary" fluid>
-                <Container className="text-center text-dark" fluid>
+            <Jumbotron className="bg-secondary" fluid={true}>
+                <Container className="text-center text-dark" fluid={true}>
                 <Row>
                     <Col>
                         <h3>I am looking for my child</h3>
@@ -82,12 +84,12 @@ guardian of a child, a relative, or a parent.</p>
                                 <FormGroup>
                                     <Input type="email" placeholder="Email Address"
                                         value={this.state.email}
-                                        onChange={(evnt)=>this.handleChange("email", evnt)}/>
+                                        onChange={this.handleChange.bind(this, "email")}/>
                                 </FormGroup>
                                 <FormGroup>
                                     <Input type="password" placeholder="Password"
                                         value={this.state.password}
-                                        onChange={(evnt)=>this.handleChange("password", evnt)}/>
+                                        onChange={this.handleChange.bind(this, "password")}/>
                                 </FormGroup>
                                 <Button color="primary">Login</Button>
                             </Form>

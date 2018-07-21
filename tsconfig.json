@@ -15,6 +15,7 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
     "paths": {
       "*": [
         "*",
@@ -30,7 +31,6 @@
   },
   "exclude": [
     "node_modules",
-    "config",
     "public",
     "build"
   ],

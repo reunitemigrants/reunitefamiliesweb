@@ -22,3 +22,6 @@ yarn-error.log*
 
 # intellij
 .idea
+
+# vim
+*.sw[po]
