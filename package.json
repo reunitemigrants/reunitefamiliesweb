@@ -15,7 +15,12 @@
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "precommit": "pretty-quick --staged"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
   },
   "devDependencies": {
     "@types/jest": "^23.3.0",
@@ -24,6 +29,9 @@
     "@types/react-dom": "^16.0.6",
     "@types/react-router": "^4.0.29",
     "@types/reactstrap": "^6.0.1",
+    "husky": "^0.14.3",
+    "prettier": "^1.13.7",
+    "pretty-quick": "^1.6.0",
     "tslint-config-prettier": "^1.14.0",
     "typescript": "^2.9.2"
   }
