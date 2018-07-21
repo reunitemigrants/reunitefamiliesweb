@@ -1,5 +1,5 @@
-import * as React from "react";
-import * as MoreDetails from "./MoreDetails";
+import * as React from 'react';
+import * as MoreDetails from './MoreDetails';
 
 import {
   Button,
@@ -9,14 +9,10 @@ import {
   Form,
   FormGroup,
   Input,
-  Navbar,
-  Nav,
-  NavItem,
-  NavLink,
-  NavbarBrand,
-  Jumbotron
-} from "reactstrap";
-import fire from "data/fire";
+  Jumbotron,
+} from 'reactstrap';
+import fire from 'data/fire';
+import { Header } from '../shared/Header';
 
 interface Props {}
 
@@ -30,14 +26,14 @@ export default class Landing extends React.PureComponent<Props, State> {
     super(props);
 
     this.state = {
-      email: "",
-      password: ""
+      email: '',
+      password: '',
     };
   }
 
   handleChange = (field: keyof State, event) => {
     this.setState({
-      [field]: event.target.value
+      [field]: event.target.value,
     } as Pick<State, typeof field>);
   };
 
@@ -56,25 +52,7 @@ export default class Landing extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
-        <Navbar>
-          <NavbarBrand>ReUnite Families</NavbarBrand>
-          <Nav>
-            <NavItem>
-              <NavLink href="#">About</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#">Testimonials/Legal</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#">
-                Español / English / Português / Maya / ىبرع
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#">Register/Login</NavLink>
-            </NavItem>
-          </Nav>
-        </Navbar>
+        <Header />
         <Jumbotron className="bg-secondary" fluid={true}>
           <Container className="text-center text-dark" fluid={true}>
             <Row>
@@ -99,7 +77,7 @@ export default class Landing extends React.PureComponent<Props, State> {
                         type="email"
                         placeholder="Email Address"
                         value={this.state.email}
-                        onChange={this.handleChange.bind(this, "email")}
+                        onChange={this.handleChange.bind(this, 'email')}
                       />
                     </FormGroup>
                     <FormGroup>
@@ -107,7 +85,7 @@ export default class Landing extends React.PureComponent<Props, State> {
                         type="password"
                         placeholder="Password"
                         value={this.state.password}
-                        onChange={this.handleChange.bind(this, "password")}
+                        onChange={this.handleChange.bind(this, 'password')}
                       />
                     </FormGroup>
                     <Button color="primary">Login</Button>
