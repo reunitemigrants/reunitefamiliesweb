@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es5", "es6", "es7", "esnext", "dom"],
+    "sourceMap": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "outDir": "build/lib",
+    "rootDir": "src",
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "alwaysStrict": true,
+    "baseUrl": "src",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "paths": {
+      "*": [
+        "*",
+        "assets/*",
+        "components/*",
+        "constants/*",
+        "data/*",
+        "global/*",
+        "utils/*",
+        "types/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "config",
+    "public",
+    "build"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+
+  }
+}

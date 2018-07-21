@@ -1,6 +1,6 @@
-import firebase from 'firebase';
+import * as firebase from 'firebase';
 
-var config = {
+const config = {
   apiKey: "",
   authDomain: "reunitefamilies-28bee.firebaseapp.com",
   databaseURL: "https://reunitefamilies-28bee.firebaseio.com",
@@ -9,5 +9,5 @@ var config = {
   messagingSenderId: "463470163881"
 };
 
-var fire = firebase.initializeApp(config);
+const fire = firebase.initializeApp(config);
 export default fire;
