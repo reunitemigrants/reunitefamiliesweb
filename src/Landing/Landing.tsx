@@ -17,15 +17,17 @@ import {
   Jumbotron,
 } from 'reactstrap';
 import fire from 'data/fire';
+import { translate } from 'react-i18next';
+import { InjectedTranslateProps } from 'react-i18next/src/props';
 
-interface Props {}
+interface Props extends InjectedTranslateProps {}
 
 interface State {
   email: string;
   password: string;
 }
 
-export default class Landing extends React.PureComponent<Props, State> {
+class Landing extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
 
@@ -54,6 +56,8 @@ export default class Landing extends React.PureComponent<Props, State> {
   }
 
   render() {
+    const { t } = this.props;
+
     return (
       <div>
         <Navbar>
@@ -79,7 +83,7 @@ export default class Landing extends React.PureComponent<Props, State> {
           <Container className="text-center text-dark" fluid={true}>
             <Row>
               <Col>
-                <h3>I am looking for my child</h3>
+                <h3>{t('I am looking for my child')}</h3>
                 <br />
                 <br />
                 <Button color="dark">Register</Button>
@@ -122,3 +126,5 @@ export default class Landing extends React.PureComponent<Props, State> {
     );
   }
 }
+
+export default translate('landing')(Landing);
