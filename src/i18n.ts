@@ -13,7 +13,7 @@ const instance = i18n
     },
 
     // TODO: Look into loading js files into resources instead of json files
-    resources: {},
+    // resources: {},
 
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',

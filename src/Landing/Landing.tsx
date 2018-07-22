@@ -17,7 +17,8 @@ import {
   Jumbotron,
 } from 'reactstrap';
 import fire from 'data/fire';
-import { translate } from 'react-i18next';
+
+import { translate, Trans } from 'react-i18next';
 import { InjectedTranslateProps } from 'react-i18next/src/props';
 
 interface Props extends InjectedTranslateProps {}
@@ -56,7 +57,9 @@ class Landing extends React.PureComponent<Props, State> {
   }
 
   render() {
-    const { t } = this.props;
+    // Instead of the trans component, you can use the t function in props,
+    // if the component is being used with the translate HOC
+    // const { t } = this.props;
 
     return (
       <div>
@@ -83,7 +86,9 @@ class Landing extends React.PureComponent<Props, State> {
           <Container className="text-center text-dark" fluid={true}>
             <Row>
               <Col>
-                <h3>{t('I am looking for my child')}</h3>
+                <h3>
+                  <Trans>I am looking for my child</Trans>
+                </h3>
                 <br />
                 <br />
                 <Button color="dark">Register</Button>
