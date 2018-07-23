@@ -18,14 +18,17 @@ import {
 } from 'reactstrap';
 import fire from 'data/fire';
 
-interface Props {}
+import { translate, Trans } from 'react-i18next';
+import { InjectedTranslateProps } from 'react-i18next/src/props';
+
+interface Props extends InjectedTranslateProps {}
 
 interface State {
   email: string;
   password: string;
 }
 
-export default class Landing extends React.PureComponent<Props, State> {
+class Landing extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
 
@@ -54,6 +57,10 @@ export default class Landing extends React.PureComponent<Props, State> {
   }
 
   render() {
+    // Instead of the trans component, you can use the t function in props,
+    // if the component is being used with the translate HOC
+    // const { t } = this.props;
+
     return (
       <div>
         <Navbar>
@@ -79,7 +86,9 @@ export default class Landing extends React.PureComponent<Props, State> {
           <Container className="text-center text-dark" fluid={true}>
             <Row>
               <Col>
-                <h3>I am looking for my child</h3>
+                <h3>
+                  <Trans>I am looking for my child</Trans>
+                </h3>
                 <br />
                 <br />
                 <Button color="dark">Register</Button>
@@ -122,3 +131,5 @@ export default class Landing extends React.PureComponent<Props, State> {
     );
   }
 }
+
+export default translate('landing')(Landing);
