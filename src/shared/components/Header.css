@@ -1,0 +1,12 @@
+.header {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.header .title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
+
+.header .title img {
+  vertical-align: middle;
+}

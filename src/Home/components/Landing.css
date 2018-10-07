@@ -1,0 +1,14 @@
+.landing .landing-content {
+  background: linear-gradient(
+    180deg,
+    rgba(69, 123, 157, 0.7) -30%,
+    #457b9d 100%
+  );
+}
+
+.landing .landing-details {
+  background-color: var(--secondary-blue);
+}
+
+.landing .sign-in {
+}
