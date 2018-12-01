@@ -6,6 +6,7 @@ import i18n from './i18n';
 
 import { Wrapper } from './shared/components/Wrapper';
 import { Home } from './Home/components/Home';
+import { Register } from './Home/components/Register';
 
 import 'normalize.css/normalize.css';
 import 'typeface-source-sans-pro';
@@ -19,6 +20,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Wrapper>
         <Route exact={true} path="/" component={Home} />
+        <Route exact={true} path="/register" component={Register} />
       </Wrapper>
     </BrowserRouter>
   </I18nextProvider>,

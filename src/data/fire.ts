@@ -1,7 +1,7 @@
 import * as firebase from 'firebase';
 
 const config = {
-  apiKey: '',
+  apiKey: 'AIzaSyBmfPsctNZH1bkq9GmaIM8-V8zPvv40noU',
   authDomain: 'reunitefamilies-28bee.firebaseapp.com',
   databaseURL: 'https://reunitefamilies-28bee.firebaseio.com',
   messagingSenderId: '463470163881',
@@ -9,5 +9,4 @@ const config = {
   storageBucket: 'reunitefamilies-28bee.appspot.com',
 };
 
-const fire = firebase.initializeApp(config);
-export default fire;
+export const fire = firebase.initializeApp(config);

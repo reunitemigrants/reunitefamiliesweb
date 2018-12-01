@@ -1,8 +1,6 @@
 import * as React from 'react';
 
-import { IButtonProps } from '@blueprintjs/core';
-
-import { JumboTronCta } from './JumbotronCta';
+import { IJumbotronCTAProps, JumboTronCta } from './JumbotronCta';
 import { IJumbotronTitleProps, JumbotronTitle } from './JumbotronTitle';
 import { JumbotronBreadcrumb } from './JumbotronBreadcrumb';
 import { IJumbotronContentProps, JumbotronContent } from './JumbotronContent';
@@ -14,7 +12,7 @@ interface IJumbotronProps {
 }
 
 export class Jumbotron extends React.Component<IJumbotronProps> {
-  public static CTA: React.SFC<IButtonProps> = JumboTronCta;
+  public static CTA: React.SFC<IJumbotronCTAProps> = JumboTronCta;
   public static Title: React.SFC<IJumbotronTitleProps> = JumbotronTitle;
   public static Breadcrumb: React.SFC = JumbotronBreadcrumb;
   public static Content: React.SFC<IJumbotronContentProps> = JumbotronContent;

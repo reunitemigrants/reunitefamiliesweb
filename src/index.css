@@ -26,7 +26,8 @@ span.bp3-icon {
   vertical-align: middle;
 }
 
-button.bp3-button.bp3-minimal.boxy {
+button.bp3-button.bp3-minimal.boxy,
+a.bp3-button.bp3-minimal.boxy {
   border-radius: 4px;
   border: 2px solid #ffffff;
   padding: 10px 50px;
@@ -62,4 +63,15 @@ button.bp3-button.bp3-minimal.boxy {
 .stretch-height-scroll {
   height: 100%;
   overflow-y: auto;
+}
+
+a.select,
+span.select,
+.bp3-editable-text.select .bp3-editable-text-content {
+  color: #ff9097;
+  text-decoration: underline;
+}
+
+a.muted {
+  color: #ffffff;
 }
